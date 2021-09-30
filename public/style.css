@@ -156,6 +156,7 @@ header {
   max-height: 50px;
   overflow-y: hidden;
   transition: max-height 0.8s ease;
+  z-index: 100;
 }
 
 header.displayed {
@@ -249,7 +250,7 @@ section#welcome-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(/tyler-lastovich-h7B7Ez2yfQc-unsplash.jpg);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/pruebadiesmil.appspot.com/o/tyler-lastovich-h7B7Ez2yfQc-unsplash.jpg?alt=media&token=1ed3e49e-c1fa-481e-9f4c-34ff2943891c);
   background-position: center;
   background-size: cover;
 
