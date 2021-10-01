@@ -236,7 +236,8 @@ nav a:hover{
 
 /* First Section -Welcome Section- */
 
-/* 
+/*
+Fluid Font Info 
 min-widht: 280px 17.5rem
 max-widht: 820px 51.25rem
 min-font-size: 1rem 
@@ -266,22 +267,34 @@ section#welcome-section div.welcome-container {
 
 section#welcome-section h2 {
   margin-top: 8px;
+  transition: all 1s ease;
 }
 section#welcome-section h2:nth-child(1) {
   font-family: var(--font1);
   font-size: 1.8em;
+  transform: translateX(100vw);
+
+}
+section#welcome-section h2:nth-child(1).displayed {
+  transform: translateX(0vw);
 }
 section#welcome-section h2:nth-child(2) {
   font-family: var(--font2);
   font-weight: bold;
   font-size: 2em;
+  transform: translateX(-100vw);
+}
+section#welcome-section h2:nth-child(2).displayed{
+  transform: translateX(0vw);
 }
 section#welcome-section h2:nth-child(3) {
   font-family: var(--font3);
-
   font-size: 1.2em;
+  transform: translateX(100vw);
 }
-
+section#welcome-section h2:nth-child(3).displayed{
+  transform: translateX(0vw);
+}
 /* Second Section -About me-  */
 
 section#aboutme-section {
