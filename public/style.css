@@ -129,7 +129,7 @@ table {
   --font1: "Yaldevi", sans-serif;
   --font2: "Heebo", sans-serif;
   --font3: "Scheherazade New", serif;
-  --fontligt: #6B9AC4;
+  --fontligt: #6b9ac4;
 }
 
 body {
@@ -193,9 +193,9 @@ nav a {
   text-align: center;
   transition: background-color 0.8s ease;
 }
-nav a:hover{
-    background-color: rgba(0, 0, 0, 0.474);
-    color: var(--fontligt);
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.474);
+  color: var(--fontligt);
 }
 .hamburger-container {
   width: 26px;
@@ -253,7 +253,7 @@ section#welcome-section {
   background-image: url(https://firebasestorage.googleapis.com/v0/b/pruebadiesmil.appspot.com/o/tyler-lastovich-h7B7Ez2yfQc-unsplash.jpg?alt=media&token=1ed3e49e-c1fa-481e-9f4c-34ff2943891c);
   background-position: center;
   background-size: cover;
-overflow-x: hidden;
+  overflow-x: hidden;
   font-size: clamp(1rem, 0.1185rem + 5.037vw, 2.7rem);
 }
 
@@ -273,7 +273,6 @@ section#welcome-section h2:nth-child(1) {
   font-family: var(--font1);
   font-size: 1.8em;
   transform: translateX(100vw);
-
 }
 section#welcome-section h2:nth-child(1).displayed {
   transform: translateX(0vw);
@@ -284,7 +283,7 @@ section#welcome-section h2:nth-child(2) {
   font-size: 2em;
   transform: translateX(-100vw);
 }
-section#welcome-section h2:nth-child(2).displayed{
+section#welcome-section h2:nth-child(2).displayed {
   transform: translateX(0vw);
 }
 section#welcome-section h2:nth-child(3) {
@@ -292,11 +291,9 @@ section#welcome-section h2:nth-child(3) {
   font-size: 1.2em;
   transform: translateX(100vw);
 }
-section#welcome-section h2:nth-child(3).displayed{
+section#welcome-section h2:nth-child(3).displayed {
   transform: translateX(0vw);
 }
-
-
 
 /* Second Section -About me-  */
 
@@ -348,20 +345,17 @@ div.aboutme-container {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
- 
 }
 
 div.aboutme-img-container {
   width: 100%;
 }
-div.aboutme-img-container figure{
-    
-}
+
 div.aboutme-img-container figure img {
   max-width: 100%;
   height: auto;
 }
-div.aboutme-img-container figure figcaption{
+div.aboutme-img-container figure figcaption {
   font-family: var(--font3);
   font-size: 0.5rem;
   text-align: center;
@@ -369,13 +363,13 @@ div.aboutme-img-container figure figcaption{
 
 /* about me text description */
 
-div.aboutme-text{
+div.aboutme-text {
   font-family: var(--font3);
   font-size: 1rem;
   text-align: start;
   padding: 4%;
 }
-div.aboutme-text h3{
+div.aboutme-text h3 {
   font-size: 1.2rem;
   font-family: var(--font2);
   font-weight: bold;
