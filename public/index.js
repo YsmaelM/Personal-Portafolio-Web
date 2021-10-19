@@ -16,8 +16,60 @@ function clickEventManager(e) {
 
 /* Welcome Animation Containers */
 
-let welcome_container = document.getElementById("welcome-container");
-let welcome_section = document.getElementById("welcome-section");
+const welcome_container = document.getElementById("welcome-container");
+const welcome_section = document.getElementById("welcome-section");
+/* skills bar animation */
+const skill_container = document.getElementById("skill-container");
+let skill_bars = [...document.getElementsByClassName("skill-progress")];
+
+/* 
+function moveUp_percentage() {
+  [...document.querySelectorAll(".skill-progress")].forEach((el)=>{
+    let p = 0,
+    attr= "--porcentage",
+    max= parseInt(el.classList[2])+1,
+    moveUp = setInterval(() => {
+      
+      console.log(p)
+        if (p<max) {
+          el.style.setProperty(`${attr}`, `"${p}%"`)
+          p++
+        }
+          
+        if (p==max ||!isInViewport(skill_container) ) {
+          clearInterval(moveUp)
+        }
+        
+        if (!isInViewport(skill_container)) {
+          p= 100
+         let moveDown = setInterval(() => {
+          el.style.setProperty(`${attr}`, `"${p}%"`)
+          p--
+          if (p<0) {
+            clearInterval(moveDown)
+          }
+          }, 20);
+        }
+      }, 20);
+)})} */
+
+
+/* 
+  function moveDown_percentage() {
+    [...document.querySelectorAll(".skill-progress")].forEach((el)=>{
+      let d = parseInt(el.classList[2])+1,
+      attr= "--porcentage",
+      min= 0;
+        let intervalID = setInterval(() => {
+          el.style.setProperty(`${attr}`, `"${d}%"`)
+          d--
+          if (d==min) {
+            clearInterval(intervalID)
+          }
+        }, 200);
+      }
+    )} */
+
 
 ChangeDisplay();
 function ChangeDisplay() {
@@ -28,6 +80,18 @@ function ChangeDisplay() {
   } else {
     [...welcome_container.children].forEach((el) => {
       el.classList.remove("displayed");
+    });
+  }
+
+  if (isInViewport(skill_container)) {
+   /*  moveUp_percentage() */
+    skill_bars.forEach((element) => {
+      element.classList.add("animated");
+    });
+  } else {
+   
+    skill_bars.forEach((element) => {
+      element.classList.remove("animated");
     });
   }
 }

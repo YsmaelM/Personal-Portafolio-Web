@@ -129,11 +129,14 @@ table {
   --font1: "Yaldevi", sans-serif;
   --font2: "Heebo", sans-serif;
   --font3: "Scheherazade New", serif;
-  --fontligt: #6b9ac4;
+  --fontligt: rgb(107, 154, 196);
+  --rounded-border: 5px;
+  --container-shadow: 5px 5px 10px rgba(0, 0, 0, 0.474);
+  --section-padding: 10%;
 }
 
 body {
-  background-color: #222725;
+  background-color: #090909;
   color: white;
   box-sizing: border-box;
 }
@@ -141,6 +144,10 @@ body {
 a {
   color: white;
   text-decoration: none;
+}
+
+section{
+  box-sizing: border-box;
 }
 
 /* Header and nav */
@@ -299,11 +306,10 @@ section#welcome-section h2:nth-child(3).displayed {
 
 section#aboutme-section {
   width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  height: auto;
+  display: grid;
+  place-items: center;
+  padding: var(--section-padding);
   /* Background gradient */
   background-color: black;
   background: linear-gradient(
@@ -339,8 +345,6 @@ section#aboutme-section {
 
 div.aboutme-container {
   width: 100%;
-  height: 80vh;
-  padding: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -348,7 +352,9 @@ div.aboutme-container {
 }
 
 div.aboutme-img-container {
-  width: 100%;
+  box-shadow: var(--container-shadow);
+  border-radius: var(--rounded-border);
+  padding: 5%;
 }
 
 div.aboutme-img-container figure img {
@@ -364,14 +370,194 @@ div.aboutme-img-container figure figcaption {
 /* about me text description */
 
 div.aboutme-text {
+  box-shadow: var(--container-shadow);
+  border-radius: var(--rounded-border);
   font-family: var(--font3);
   font-size: 1rem;
   text-align: start;
   padding: 4%;
 }
 div.aboutme-text h3 {
+  margin-bottom: 20px;
   font-size: 1.2rem;
   font-family: var(--font2);
   font-weight: bold;
   text-align: center;
+}
+
+/* Skills Section */
+
+section.skills {
+  width: 100vw;
+  height: auto;
+  display: grid;
+  place-items: center;
+  padding: var(--section-padding);
+  /* Background gradient */
+  background-color: black;
+  background: linear-gradient(
+    135deg,
+    #090909 40%,
+    rgb(15, 15, 15) 65%,
+    rgb(16, 16, 16) 70%,
+    rgb(17, 17, 17) 75%,
+    rgb(18, 18, 18) 77%,
+    rgb(33, 33, 33) 100%
+  );
+  background: -moz-linear-gradient(
+    135deg,
+    #090909 40%,
+    rgb(15, 15, 15) 65%,
+    rgb(16, 16, 16) 70%,
+    rgb(17, 17, 17) 75%,
+    rgb(18, 18, 18) 77%,
+    rgb(33, 33, 33) 100%
+  );
+  background: -webkit-linear-gradient(
+    405deg,
+    #090909 40%,
+    rgb(15, 15, 15) 65%,
+    rgb(16, 16, 16) 70%,
+    rgb(17, 17, 17) 75%,
+    rgb(18, 18, 18) 77%,
+    rgb(33, 33, 33) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#111111", endColorstr="#2D2C2C", GradientType=1 );
+}
+
+
+div.skill-text{
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.474);
+  padding: 5%;
+  width: 100%;
+  border-radius: var(--rounded-border);
+  font-family: var(--font3);
+  line-height: 1.2rem
+}
+div.skill-text h3{
+  font-family: var(--font1);
+  text-align: center;
+  margin: 10px 0px;
+}
+
+div.skills-container {
+  border-radius: var(--rounded-border);
+  width: 100%;
+  height: auto;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.474);
+  padding: 5%;
+}
+
+div.skill {
+  width: 100%;
+  height: 16px;
+  margin: 8% 0%;
+  padding: 3px;
+  /*  overflow: hidden; */
+  background-color: rgba(0, 0, 0, 0.474);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+    0 1px rgba(255, 255, 255, 0.08);
+}
+
+div.skill-progress {
+  position: relative;
+  background: rgb(107, 154, 196);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7C65A9", endColorstr="#96D4CA", GradientType=1 );
+  height: 100%;
+  border-radius: 10px;
+  animation: bg-color-changing 1s linear infinite;
+  transition: all 3s ease, --num 3s ease;
+  counter-set: num var(--num);
+  width: 0%;
+  --porcentage: "0";
+}
+div.skill-progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 25%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.4) 75%,
+    transparent 100%
+  );
+  z-index: 1;
+  background-size: 200% 50%;
+  animation: move 1.3s linear infinite;
+  border-radius: 20px;
+  /* border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px; */
+  overflow: hidden;
+}
+@keyframes move {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+
+div.skill-progress::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  padding: 2% 5%;
+  left: 100%;
+  bottom: 100%;
+  font-size: 0.8rem;
+}
+/* porcentage */
+div.skill-progress.html::after {
+  content: counter(num);
+}
+div.skill-progress.css::after {
+  content: counter(num);
+}
+div.skill-progress.javaScript::after {
+  content: counter(num);
+}
+div.skill-progress.ReactJS::after {
+  content: counter(num);
+}
+
+
+/* animation */
+div.skill-progress.html.animated {
+  --num:90;
+   width: 90%;
+}
+div.skill-progress.css.animated {
+  --num:85;
+  width: 85%;
+}
+div.skill-progress.javaScript.animated {
+  --num:65;
+  width: 75%;
+}
+div.skill-progress.ReactJS.animated {
+  --num:10;
+  width: 10%;
+}
+
+span.skill-name {
+  font-family: var(--font2);
+  font-size: 1.2rem;
 }
